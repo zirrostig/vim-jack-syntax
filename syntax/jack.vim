@@ -3,7 +3,7 @@
 "
 "Author:    Zachary Stigall
 "Email:     zirrostig <at> lanfort.org
-"Date:      9 Nov 2012
+"Date:      10 Nov 2012
 
 if exists("b:current_syntax")
     finish
