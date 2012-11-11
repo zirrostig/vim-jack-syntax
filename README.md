@@ -8,10 +8,18 @@ Install: (Pathogen)
     1) Clone this repo into your $VIM/bundle/ directory
     2) Done
 
-Install: (Normal)
------------------
+Install: (Normal - Linux/Mac)
+-----------------------------
     1) Download .zip from github, clone, whatever makes you happy, just so long
     as you have aquired the files in this repo
 
-    2) Copy everything into you .vim folder, maintaing the paths.
-        e.g. MyRepo/syntax/jack.vim -> $VIM/syntax/jack.vim
+    2)  cp ftdetect/jack.vim ~/ftdetct/jack.vim
+        cp syntax/jack.vim   ~/syntax/jack.vim
+
+Install: (Normal - Windows)
+---------------------------
+    1) Download .zip from github, clone, whatever makes you happy, just so long
+    as you have aquired the files in this repo
+
+    2)  copy ftdetect\jack.vim to ~\_vimfiles\ftdetect\jack.vim
+        copy syntax\jack.vim   to ~\_vimfiles\syntax\jack.vim

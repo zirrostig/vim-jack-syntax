@@ -24,6 +24,7 @@ syn keyword jack_reserved_null          null
 syn keyword jack_reserved_reference     this
 
 "Integers
+"Negative Integers, are the '-' operator followed by an int
 syn match jack_int           '\d\+' skipwhite nextgroup=jack_operator
 
 "Identifier
@@ -86,4 +87,3 @@ hi link jack_comment_line           Comment
 hi link jack_comment_multiline      Comment
 hi link jack_comment_api            Comment
 hi link jack_comment_todo           Todo
-
