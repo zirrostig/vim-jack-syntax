@@ -13,8 +13,8 @@ Install: (Normal - Linux/Mac)
     1) Download .zip from github, clone, whatever makes you happy, just so long
     as you have aquired the files in this repo
 
-    2)  cp ftdetect/jack.vim ~/ftdetct/jack.vim
-        cp syntax/jack.vim   ~/syntax/jack.vim
+    2)  cp ftdetect/jack.vim ~/.vim/ftdetct/jack.vim
+        cp syntax/jack.vim   ~/.vim/syntax/jack.vim
 
 Install: (Normal - Windows)
 ---------------------------
