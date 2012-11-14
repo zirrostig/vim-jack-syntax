@@ -36,7 +36,7 @@ syn match jack_function      '\v(\h\w*\.)*(\h\w*)'  skipwhite nextgroup=jack_exp
 syn match jack_list_sep      ','
 syn match jack_line_term     ';$'
 syn match jack_assign_comp   '='
-syn match jack_assign_comp   '='    skipwhite nextgroup=jack_exp,jack_int,jack_identifier,jack_string
+syn match jack_assign_comp   '='    skipwhite nextgroup=jack_exp,jack_int,jack_identifier,jack_string,jack_function,jack_reserved_bool,jack_reserved_null,jack_reserved_reference
 syn match jack_member        '.'
 syn match jack_operator      '+'    skipwhite nextgroup=jack_exp,jack_int,jack_identifier
 syn match jack_operator      '-'    skipwhite nextgroup=jack_exp,jack_int,jack_identifier
@@ -76,7 +76,7 @@ hi link jack_reserved_null          Constant
 hi link jack_reserved_reference     Identifier
 hi link jack_identifier             Identifier
 hi link jack_function               Identifier
-hi link jack_int_pos                Number
+hi link jack_int                    Number
 hi link jack_string                 String
 hi link jack_list_sep               Delimiter
 hi link jack_line_term              Delimiter
