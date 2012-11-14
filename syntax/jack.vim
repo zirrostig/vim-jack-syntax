@@ -11,9 +11,9 @@ endif
 
 "Reserved Words
 syn keyword jack_reserved_class         class
-syn keyword jack_reserved_define        constructor method function
-syn keyword jack_reserved_primitive     int boolean char void
-syn keyword jack_reserved_declare       var static field skipwhite nextgroup=jack_primitive,identifier
+syn keyword jack_reserved_define        constructor method function skipwhite nextgroup=jack_primitive,jack_type
+syn keyword jack_reserved_primitive     int boolean char void skipwhite=jack_identifier,jack_function_def
+syn keyword jack_reserved_declare       var static field skipwhite nextgroup=jack_primitive,jack_type
 syn keyword jack_reserved_conditional   if else
 syn keyword jack_reserved_do            do      skipwhite nextgroup=jack_function,jack_identifier
 syn keyword jack_reserved_let           let     skipwhite nextgroup=jack_identifier
@@ -28,9 +28,11 @@ syn keyword jack_reserved_reference     this
 syn match jack_int           '\d\+' skipwhite nextgroup=jack_operator
 
 "Identifier
-syn match jack_identifier    '\v\h\w*'
+syn match jack_type          '\v\h\w*'              skipwhite nextgroup=jack_function_def,jack_identifier
 syn match jack_identifier    '\v\h\w*'              skipwhite nextgroup=jack_operator,jack_assign_comp
+syn match jack_identifier    '\v\h\w*'
 syn match jack_function      '\v(\h\w*\.)*(\h\w*)'  skipwhite nextgroup=jack_exp
+syn match jack_function_def  '\v\h\w*'              skipwhite nextgroup=jack_exp
 
 "Symbols
 syn match jack_list_sep      ','
@@ -65,6 +67,7 @@ syn region  jack_comment_api        start='\/\*\*' end='\*\/'   contains=jack_co
 hi link jack_reserved_class         Structure
 hi link jack_reserved_define        Function
 hi link jack_reserved_primitive     Type
+hi link jack_type                   Type
 hi link jack_reserved_declare       StorageClass
 hi link jack_reserved_conditional   Conditional
 hi link jack_reserved_do            Keyword
@@ -76,6 +79,7 @@ hi link jack_reserved_null          Constant
 hi link jack_reserved_reference     Identifier
 hi link jack_identifier             Identifier
 hi link jack_function               Identifier
+hi link jack_function_def           Function
 hi link jack_int                    Number
 hi link jack_string                 String
 hi link jack_list_sep               Delimiter
