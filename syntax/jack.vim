@@ -19,6 +19,7 @@ syn keyword jack_reserved_do            do      skipwhite nextgroup=jack_functio
 syn keyword jack_reserved_let           let     skipwhite nextgroup=jack_identifier
 syn keyword jack_reserved_repeat        while
 syn keyword jack_reserved_label         return
+syn keyword jack_reserved_label         return skipwhite nextgroup=jack_exp,jack_identifier
 syn keyword jack_reserved_bool          true false
 syn keyword jack_reserved_null          null
 syn keyword jack_reserved_reference     this
@@ -30,7 +31,7 @@ syn match jack_int           '\d\+' skipwhite nextgroup=jack_operator
 "Identifier
 syn match jack_type          '\v\h\w*'              skipwhite nextgroup=jack_function_def,jack_identifier
 syn match jack_identifier    '\v\h\w*'
-syn match jack_identifier    '\v\h\w*'              skipwhite nextgroup=jack_operator,jack_assign_comp
+syn match jack_identifier    '\v\h\w*'              skipwhite nextgroup=jack_operator,jack_assign_comp,jack_index
 syn match jack_function      '\v(\h\w*\.)*(\h\w*)'  skipwhite nextgroup=jack_exp
 syn match jack_function_def  '\v\h\w*'              skipwhite nextgroup=jack_exp
 
@@ -52,7 +53,7 @@ syn match jack_operator      '>'    skipwhite nextgroup=jack_exp,jack_int,jack_i
 "Regions
 syn region jack_block               start=/{/   end=/}/                 fold transparent contained keepend
 syn region jack_exp                 start=/(/   end=/)/                 keepend contains=jack_exp,jack_string,jack_int,jack_reserved_bool,jack_reserved_null,jack_reserved_reference,jack_list_sep,jack_identifier
-syn region jack_index               start=/\[/  end=/\]/                keepend contains=expresion,jack_int_pos,jack_int_neg
+syn region jack_index               start=/\[/  end=/\]/                keepend contains=expresion,jack_int_pos,jack_int_neg,jack_identifier
 syn region jack_string              start=/"/   end=/"/     skip=+//+   contained
 
 "Comments
