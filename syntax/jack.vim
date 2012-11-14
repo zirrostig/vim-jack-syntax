@@ -15,7 +15,7 @@ syn keyword jack_reserved_define        constructor method function skipwhite ne
 syn keyword jack_reserved_primitive     int boolean char void skipwhite=jack_identifier,jack_function_def
 syn keyword jack_reserved_declare       var static field skipwhite nextgroup=jack_primitive,jack_type
 syn keyword jack_reserved_conditional   if else
-syn keyword jack_reserved_do            do      skipwhite nextgroup=jack_function,jack_identifier
+syn keyword jack_reserved_do            do      skipwhite nextgroup=jack_function
 syn keyword jack_reserved_let           let     skipwhite nextgroup=jack_identifier
 syn keyword jack_reserved_repeat        while
 syn keyword jack_reserved_label         return
@@ -29,15 +29,14 @@ syn match jack_int           '\d\+' skipwhite nextgroup=jack_operator
 
 "Identifier
 syn match jack_type          '\v\h\w*'              skipwhite nextgroup=jack_function_def,jack_identifier
-syn match jack_identifier    '\v\h\w*'              skipwhite nextgroup=jack_operator,jack_assign_comp
 syn match jack_identifier    '\v\h\w*'
+syn match jack_identifier    '\v\h\w*'              skipwhite nextgroup=jack_operator,jack_assign_comp
 syn match jack_function      '\v(\h\w*\.)*(\h\w*)'  skipwhite nextgroup=jack_exp
 syn match jack_function_def  '\v\h\w*'              skipwhite nextgroup=jack_exp
 
 "Symbols
 syn match jack_list_sep      ','
 syn match jack_line_term     ';$'
-syn match jack_assign_comp   '='
 syn match jack_assign_comp   '='    skipwhite nextgroup=jack_exp,jack_int,jack_identifier,jack_string,jack_function,jack_reserved_bool,jack_reserved_null,jack_reserved_reference
 syn match jack_member        '.'
 syn match jack_operator      '+'    skipwhite nextgroup=jack_exp,jack_int,jack_identifier
